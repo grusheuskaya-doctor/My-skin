@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Skin — первый экран</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<link rel="stylesheet" href="hero.css"><style>body{margin:0}</style></head><body>
+<section class="mskh" id="mskh" aria-label="My Skin">
+<script>(function(s){if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))s.parentNode.className+=' mskh--js'})(document.currentScript)</script>
+<svg class="mskh-svg" aria-hidden="true" focusable="false"><defs><filter id="mskh-f" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence id="mskh-t" type="fractalNoise" baseFrequency="0.008 0.011" numOctaves="1" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="34" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+<div class="mskh-bg" aria-hidden="true">
+<div class="mskh-pat mskh-pat--g"><img src="assets/pat-green.webp" alt="" width="640" height="448" decoding="async"></div>
+<div class="mskh-pat mskh-pat--b"><img src="assets/pat-blue.webp" alt="" width="640" height="427" decoding="async"></div>
+<div class="mskh-pat mskh-pat--p"><img src="assets/pat-pink.webp" alt="" width="640" height="427" decoding="async"></div>
+</div>
+<div class="mskh-text">
+<h1 class="mskh-h1">Здоровая кожа <br class="mskh-br">начинается <br class="mskh-br">с грамотного ухода</h1>
+<p class="mskh-sub">Уходовая косметика с продуманными формулами <br class="mskh-br">и экспертным подходом к потребностям вашей кожи.</p>
+<a class="mskh-btn" href="#catalog"><span>В КАТАЛОГ</span><svg viewBox="0 0 36 20" aria-hidden="true"><path d="M1 10h33M25 1l9 9-9 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+<div class="mskh-stage">
+<div class="mskh-drops"><img src="assets/drops.webp" alt="" width="620" height="460" decoding="async"></div>
+<div class="mskh-p mskh-p--foam"><div class="mskh-in"><img class="mskh-img" src="assets/foam.webp" alt="My Skin Cleansing Foam — очищающая пенка" width="520" height="1828"><i class="mskh-glint"></i></div></div>
+<div class="mskh-p mskh-p--toner"><div class="mskh-in"><img class="mskh-img" src="assets/toner.webp" alt="My Skin Moisturizing Toner — увлажняющий тоник" width="347" height="1285"><i class="mskh-glint"></i></div></div>
+<div class="mskh-pod"><img src="assets/podium.webp" alt="" width="1100" height="227"></div>
+<div class="mskh-p mskh-p--cream"><div class="mskh-in"><img class="mskh-img" src="assets/cream.webp" alt="My Skin Moisturizer Cream — увлажняющий крем" width="264" height="987"><i class="mskh-glint"></i></div></div>
+</div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="hero.js"></script>
+</body></html>

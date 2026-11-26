@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Skin — первый экран</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<link rel="stylesheet" href="hero.css"><style>body{margin:0}</style></head><body>
+<section class="mskh" id="mskh" data-d="video/hero-desktop.mp4" data-m="video/hero-mobile.mp4" aria-label="My Skin">
+<script>(function(s){if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))s.parentNode.className+=' mskh--js'})(document.currentScript)</script>
+<div class="mskh-media">
+<img class="mskh-fb mskh-fb--d" src="video/poster-desktop.webp" alt="Косметика My Skin: пенка, крем и тоник" width="1600" height="900">
+<img class="mskh-fb mskh-fb--m" src="video/poster-mobile.webp" alt="Косметика My Skin: пенка, крем и тоник" width="720" height="1280">
+<video class="mskh-video" muted playsinline preload="auto" aria-hidden="true"></video>
+</div>
+<div class="mskh-text">
+<h1 class="mskh-h1">Здоровая кожа <br class="mskh-br">начинается <br class="mskh-br">с грамотного ухода</h1>
+<p class="mskh-sub">Уходовая косметика с продуманными формулами <br class="mskh-br">и экспертным подходом к потребностям вашей кожи.</p>
+<a class="mskh-btn" href="#catalog"><span>В КАТАЛОГ</span><svg viewBox="0 0 36 20" aria-hidden="true"><path d="M1 10h33M25 1l9 9-9 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+</section>
+<script src="hero.js"></script>
+</body></html>
