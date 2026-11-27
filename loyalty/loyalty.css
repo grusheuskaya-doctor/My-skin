@@ -1,10 +1,10 @@
-/* MY SKIN — блок программы лояльности. Все стили под префиксом .ms-loyalty */
+* MY SKIN — блок программы лояльности. Все стили под префиксом .ms-loyalty */
 .ms-loyalty{
   --bg:#FDFCFF;--title:#2B2B33;--text:#4A4A55;
   --pink-1:#E4487F;--pink-2:#C42A62;--blue-soft:#EAF0FD;--btn-radius:10px;
   position:relative;overflow:hidden;box-sizing:border-box;background:var(--bg);
   display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:40px;
-  padding:clamp(40px,6vw,96px) clamp(20px,7vw,110px);
+  padding:clamp(16px,2vw,32px) clamp(20px,7vw,110px) clamp(40px,6vw,96px);
   font-family:'Onest',system-ui,sans-serif;
 }
 .ms-loyalty *,.ms-loyalty *::before,.ms-loyalty *::after{box-sizing:border-box}
@@ -58,7 +58,7 @@
   background:linear-gradient(145deg,#FFFFFF 0%,#F1F5FF 100%);
   box-shadow:0 2px 0 #fff inset,0 -10px 0 -2px #DCE6FB inset,
     0 40px 60px -30px rgba(90,120,200,.45),0 12px 24px -12px rgba(90,120,200,.25);
-  display:flex;flex-direction:column;
+  display:flex;flex-direction:column;min-height:0;
 }
 .ms-loyalty .ms-card::before{
   content:"";position:absolute;top:-10%;right:-8%;width:62%;height:75%;
@@ -78,9 +78,15 @@
 }
 .ms-loyalty .ms-level-row b{font-weight:600;color:var(--title)}
 .ms-loyalty .ms-level-row span{color:var(--pink-1);font-weight:500}
-.ms-loyalty .ms-bar{margin-top:10px;height:clamp(10px,1.2vw,18px);border-radius:99px;background:#E3EBFB;overflow:hidden}
+.ms-loyalty .ms-bar{
+  position:relative;flex:0 0 auto !important;display:block;width:100%;
+  height:14px !important;min-height:14px;max-height:18px;margin:10px 0 0;
+  border-radius:99px;background:#E3EBFB;overflow:hidden;
+}
+@media (min-width:1200px){.ms-loyalty .ms-bar{height:18px !important}}
 .ms-loyalty .ms-bar i{
-  display:block;height:100%;width:0;border-radius:99px;
+  position:absolute;left:0;top:0;bottom:0;display:block;width:0;height:auto;margin:0;
+  border-radius:99px;font-style:normal;
   background:linear-gradient(180deg,#9DBBF2,#6F95E0);
   animation:ms-fill 1.4s .3s cubic-bezier(.2,.8,.2,1) forwards;
 }
