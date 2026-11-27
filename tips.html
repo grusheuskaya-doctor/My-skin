@@ -149,6 +149,7 @@
   dots.style.display=np>1?'flex':'none';
   function upd(){
     var a=0,m=1e9; for(var k=0;k<np;k++){var dd=Math.abs(track.scrollLeft-start(k)); if(dd<m){m=dd;a=k}}
+    if(track.scrollLeft>=track.scrollWidth-track.clientWidth-3)a=np-1;
     [].forEach.call(dots.children,function(d,i){d.className=i===a?'on':''});
   }
   track.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd);
