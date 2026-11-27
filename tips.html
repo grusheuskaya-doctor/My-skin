@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Советы косметолога</title><style>body{margin:0;background:#fff}</style></head><body>
+<!-- ===== Блок «Советы косметолога» — вставлять в Tilda через T123 ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+
+<style>
+.ms-tips{--pink1:#E4487F;--pink2:#C42A62;--hover:#7DA0E3;--h:#2B2B33;--t:#4A4A55;
+  box-sizing:border-box;width:100%;padding:3vw 4vw;font-family:'Onest',sans-serif;font-weight:400;color:var(--t)}
+.ms-tips *{box-sizing:border-box}
+.ms-card{max-width:900px;margin:0 auto;text-align:center}
+.ms-title{margin:0 0 2.2vw;font-family:'Source Serif 4',serif;font-weight:600;font-size:2.71vw;line-height:1.1;letter-spacing:-.01em;color:var(--h);text-wrap:balance}
+
+/* лента */
+.ms-wrap{margin-bottom:1.6vw}.ms-dots:empty{display:none}
+.ms-track{align-items:flex-start;--g:clamp(12px,1.6vw,24px);position:relative;display:flex;gap:var(--g);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:8px}
+.ms-track::-webkit-scrollbar{display:none}
+.ms-item{flex:0 0 auto;width:calc((100% - 5*var(--g))/6);background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;text-align:center}
+.ms-item:nth-child(6n+1){scroll-snap-align:start}
+.ms-ring{display:block;width:100%;aspect-ratio:1;padding:3px;border-radius:50%;background:linear-gradient(135deg,var(--pink1),var(--pink2));transition:transform .25s}
+.ms-item:hover .ms-ring{transform:scale(1.05)}
+.ms-in{position:relative;display:block;width:100%;height:100%;border:3px solid #fff;border-radius:50%;overflow:hidden;background:#F6E3EA}
+.ms-in img,.ms-in video{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.ms-play{position:absolute;left:50%;top:50%;width:32%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:rgba(43,43,51,.55);display:flex;align-items:center;justify-content:center}
+.ms-play:after{content:"";margin-left:8%;border-style:solid;border-width:.42em 0 .42em .7em;border-color:transparent transparent transparent #fff;font-size:1.1vw}
+.ms-cap{display:block;margin-top:.8vw;font-size:max(12px,.9vw);line-height:1.3;color:var(--h)}
+
+/* точки */
+.ms-dots{display:flex;justify-content:center;gap:8px;margin:1.4vw 0 2vw;position:relative}
+.ms-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#DADAE0;cursor:pointer;transition:background .2s}
+.ms-dots button.on{background:var(--pink2)}
+
+/* кнопка */
+.ms-btn{position:relative;display:inline-flex;align-items:center;padding:.95em 2.2em;border-radius:999px;overflow:hidden;isolation:isolate;
+  font-family:'Onest',sans-serif;font-weight:600;font-size:1.05vw;line-height:1.2;color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,var(--pink1),var(--pink2))}
+.ms-btn:before{content:"";position:absolute;inset:0;background:var(--hover);opacity:0;transition:opacity .25s;z-index:-1}
+.ms-btn:hover:before{opacity:1}
+.ms-note{margin:1.2vw 0 0;font-size:max(11px,.85vw);line-height:1.5;color:var(--t);text-wrap:balance}
+
+/* просмотр историй */
+.ms-viewer{position:fixed;inset:0;z-index:999999;display:none;align-items:center;justify-content:center;background:rgba(20,20,26,.92)}
+.ms-viewer.open{display:flex}
+.ms-stage{position:relative;height:min(92vh,calc(92vw*16/9));aspect-ratio:9/16;max-height:92vh;background:#000;border-radius:18px;overflow:hidden}
+.ms-stage video{width:100%;height:100%;object-fit:cover;display:block}
+.ms-bars{position:absolute;left:12px;right:12px;top:12px;display:flex;gap:4px;z-index:3}
+.ms-bar{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
+.ms-bar b{display:block;height:100%;width:0;background:#fff}
+.ms-top{position:absolute;left:12px;right:12px;top:24px;z-index:3;display:flex;align-items:center;justify-content:space-between;color:#fff;font-family:'Onest',sans-serif;font-weight:600;font-size:15px;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.ms-top div{display:flex;gap:6px}
+.ms-ic{width:36px;height:36px;border:0;border-radius:50%;background:rgba(0,0,0,.35);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ms-ic svg{width:18px;height:18px}
+.ms-zone{position:absolute;top:70px;bottom:0;z-index:2;width:33%;background:none;border:0;cursor:pointer}
+.ms-zl{left:0}.ms-zr{right:0}
+.ms-zc{left:33%;width:34%}
+.ms-vnav{position:absolute;top:50%;width:44px;height:44px;margin-top:-22px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ms-vnav svg{width:18px;height:18px}
+.ms-vp{left:calc(50% - min(46vh,calc(46vw*16/9))*9/16 - 64px)}
+.ms-vn{right:calc(50% - min(46vh,calc(46vw*16/9))*9/16 - 64px)}
+
+@media (max-width:640px){
+  .ms-tips{padding:6vw 3.5vw}
+  .ms-title{font-size:clamp(22px,6vw,32px);margin-bottom:5vw}
+  .ms-track{--g:4vw;align-items:start;display:grid;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 2*var(--g))/3);column-gap:var(--g);row-gap:5vw}
+  .ms-item{width:auto}
+  .ms-item{grid-column:var(--c);grid-row:var(--r)}
+  .ms-item:nth-child(6n+4){scroll-snap-align:start}
+  .ms-play:after{font-size:max(11px,3vw)}
+  .ms-cap{margin-top:2vw;font-size:12px}
+  .ms-wrap{margin-bottom:3vw}.ms-dots{margin:0 0 6vw}
+  .ms-btn{font-size:clamp(13px,3.6vw,16px)}
+  .ms-note{margin-top:4vw;font-size:clamp(10px,2.8vw,13px)}
+  .ms-stage{height:100%;width:100%;max-height:none;aspect-ratio:auto;border-radius:0}
+  .ms-vnav{display:none}
+}
+</style>
+
+<section class="ms-tips" id="msTips">
+  <div class="ms-card">
+    <h2 class="ms-title">Советы косметолога MY SKIN</h2>
+    <div class="ms-wrap">
+      <div class="ms-track" id="msTrack"></div>
+    </div>
+    <div class="ms-dots" id="msDots"></div>
+    <a class="ms-btn" id="msBtn" href="#" target="_blank" rel="noopener">Я тоже хочу совет!</a>
+    <p class="ms-note">Задайте свой вопрос косметологу.<br>Ответ на него может стать темой следующего видео на нашем сайте.</p>
+  </div>
+</section>
+
+<div class="ms-viewer" id="msViewer" role="dialog" aria-modal="true">
+  <button class="ms-vnav ms-vp" aria-label="Предыдущее"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2 2 8l6 6"/></svg></button>
+  <div class="ms-stage">
+    <video id="msVideo" playsinline preload="auto"></video>
+    <div class="ms-bars" id="msBars"></div>
+    <div class="ms-top"><span id="msName"></span>
+      <div>
+        <button class="ms-ic" id="msMute" aria-label="Звук"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path id="msWave" d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></button>
+        <button class="ms-ic" id="msClose" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div></div>
+    <button class="ms-zone ms-zl" aria-label="Назад"></button>
+    <button class="ms-zone ms-zc" aria-label="Пауза"></button>
+    <button class="ms-zone ms-zr" aria-label="Дальше"></button>
+  </div>
+  <button class="ms-vnav ms-vn" aria-label="Следующее"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 2 6 6-6 6"/></svg></button>
+</div>
+
+<script>
+(function(){
+  /* ===== НАСТРОЙКИ ===== */
+  var BASE = 'https://grusheuskaya-doctor.github.io/My-skin/';   // адрес GitHub Pages
+  var BUTTON_URL = '#';                                           // ← сюда вставить ссылку для кнопки
+  /* Новое видео: загрузить mp4 в videos/, jpg в posters/ и добавить строку ниже */
+  var ITEMS = [
+    {t:'Очищение',             f:'cleansing'},
+    {t:'Пенка или гель',       f:'foam-or-gel'},
+    {t:'Увлажнение',           f:'hydration', auto:true},   // auto:true — кружок сам играет по кругу
+    {t:'Уход за сухой кожей',  f:'dry-skin'},
+    {t:'Уход за жирной кожей', f:'oily-skin'},
+    {t:'Микроиглы',            f:'microneedles'}
+  ];
+  /* ====================== */
+
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var root=$('#msTips'), track=$('#msTrack'), dots=$('#msDots'),
+      viewer=$('#msViewer'), video=$('#msVideo'), bars=$('#msBars'), name=$('#msName'),
+      wave=$('#msWave'), cur=-1, muted=false;
+  $('#msBtn').href=BUTTON_URL;
+  document.body.appendChild(viewer);   // чтобы окно не зависело от блоков Tilda
+
+  ITEMS.forEach(function(it,i){
+    var pu=BASE+'posters/'+it.f+'.jpg', vu=BASE+'videos/'+it.f+'.mp4';
+    var b=document.createElement('button'); b.className='ms-item'; b.type='button';
+    var media=it.auto
+      ? '<video src="'+vu+'" poster="'+pu+'" muted loop autoplay playsinline preload="auto"></video>'
+      : '<img loading="lazy" alt="" src="'+pu+'"><span class="ms-play"></span>';
+    b.innerHTML='<span class="ms-ring"><span class="ms-in">'+media+'</span></span><span class="ms-cap">'+it.t+'</span>';
+    b.onclick=function(){open(i)};
+    var q=i%6; b.style.setProperty('--c',Math.floor(i/6)*3+q%3+1); b.style.setProperty('--r',Math.floor(q/3)+1);  /* порядок 3×2 на телефоне */
+    track.appendChild(b);
+    var v=$('video',b); if(v){v.muted=true;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}
+  });
+
+  /* точки: по одной на каждые 6 видео */
+  var PER=6, np=Math.ceil(ITEMS.length/PER), items=track.children;
+  function start(k){return items[k*PER].offsetLeft-8}
+  for(var k=0;k<np;k++){(function(k){
+    var d=document.createElement('button'); d.type='button'; d.setAttribute('aria-label','Страница '+(k+1));
+    d.onclick=function(){track.scrollTo({left:start(k),behavior:'smooth'})};
+    dots.appendChild(d);
+  })(k)}
+  dots.style.display=np>1?'flex':'none';
+  function upd(){
+    var a=0,m=1e9; for(var k=0;k<np;k++){var dd=Math.abs(track.scrollLeft-start(k)); if(dd<m){m=dd;a=k}}
+    [].forEach.call(dots.children,function(d,i){d.className=i===a?'on':''});
+  }
+  track.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd);
+  upd();
+
+  /* просмотр */
+  function open(i){
+    viewer.classList.add('open'); document.documentElement.style.overflow='hidden';
+    bars.innerHTML=ITEMS.map(function(){return '<span class="ms-bar"><b></b></span>'}).join('');
+    play(i);
+  }
+  function play(i){
+    cur=i; var it=ITEMS[i];
+    video.poster=BASE+'posters/'+it.f+'.jpg';
+    video.src=BASE+'videos/'+it.f+'.mp4'; video.muted=muted;
+    var p=video.play(); if(p&&p.catch)p.catch(function(){});
+    name.textContent=it.t; prog(0);
+  }
+  function prog(r){
+    [].forEach.call(bars.children,function(s,k){s.firstChild.style.width=(k<cur?100:k===cur?r*100:0)+'%'});
+  }
+  function go(d){
+    var n=cur+d;
+    if(n<0){video.currentTime=0;return}
+    if(n>=ITEMS.length){close();return}
+    play(n);
+  }
+  function close(){
+    viewer.classList.remove('open'); video.pause(); video.removeAttribute('src'); video.load();
+    document.documentElement.style.overflow='';
+  }
+  video.addEventListener('timeupdate',function(){if(video.duration)prog(video.currentTime/video.duration)});
+  video.addEventListener('ended',function(){go(1)});
+  $('.ms-zl',viewer).onclick=function(){go(-1)};
+  $('.ms-zr',viewer).onclick=function(){go(1)};
+  $('.ms-zc',viewer).onclick=function(){video.paused?video.play():video.pause()};
+  $('.ms-vp',viewer).onclick=function(){go(-1)};
+  $('.ms-vn',viewer).onclick=function(){go(1)};
+  $('#msClose').onclick=close;
+  $('#msMute').onclick=function(){muted=!muted;video.muted=muted;wave.style.display=muted?'none':''};
+  viewer.addEventListener('click',function(e){if(e.target===viewer)close()});
+  document.addEventListener('keydown',function(e){
+    if(!viewer.classList.contains('open'))return;
+    if(e.key==='Escape')close(); else if(e.key==='ArrowRight')go(1); else if(e.key==='ArrowLeft')go(-1);
+  });
+})();
+</script>
+</body></html>
